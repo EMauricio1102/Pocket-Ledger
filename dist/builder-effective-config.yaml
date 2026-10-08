@@ -1,0 +1,25 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.pocketledger.app
+productName: Pocket Ledger
+files:
+  - filter:
+      - main.js
+      - index.html
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+mac:
+  target: dmg
+  category: public.app-category.finance
+linux:
+  target:
+    - AppImage
+  category: Office
+electronVersion: 33.4.11
