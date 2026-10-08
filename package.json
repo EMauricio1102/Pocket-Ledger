@@ -1,0 +1,27 @@
+{
+  "name": "pocket-ledger",
+  "version": "1.0.0",
+  "description": "Local expense, balance and debt tracker",
+  "main": "main.js",
+  "author": "Pocket Ledger",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never"
+  },
+  "build": {
+    "appId": "com.pocketledger.app",
+    "productName": "Pocket Ledger",
+    "files": ["main.js", "index.html"],
+    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }, { "target": "portable", "arch": ["x64"] }] },
+    "mac": { "target": "dmg", "category": "public.app-category.finance" },
+    "linux": { "target": ["AppImage"], "category": "Office" }
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
